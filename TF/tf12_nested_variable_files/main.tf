@@ -55,6 +55,9 @@ resource "aws_instance" "ubuntu" {
   tags = {
     Name = format("terraform-0.12-for-demo-%d", count.index)
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }
 
 # This uses the old splat expression
