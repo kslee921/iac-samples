@@ -66,6 +66,9 @@ resource "aws_instance" "rvt" {
     network_interface_id = aws_network_interface.rvt.id
     device_index = 0
   }
+  metadata_options {
+    http_tokens = "required"
+  }
 }
 
 output "instance_private_dns" {
